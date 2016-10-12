@@ -3,15 +3,15 @@ import '../styles/ListItem.css';
 
 class ListItem extends Component {
   render() {
-    let id    = this.props.id,
-        text  = this.props.text,
-        style = this.props.style,
-        node  = this.props.node;
+    let id         = this.props.id,
+        child      = this.props.child,
+        style      = this.props.style,
+        boundNode  = this.props.boundNode;
 
     return (
       <li className={style}
-          onClick={node.clicked.bind(node, id)}>
-          {text}
+          onClick={boundNode.clicked.bind(boundNode, id)}>
+          {child}
       </li>
     );
   }
