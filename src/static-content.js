@@ -1,12 +1,13 @@
 import React from 'react';
 import Counter from './components/Counter';
 import Search from './components/Search';
+import DefaultComponent from './components/DefaultComponent';
 
 export const showcaseItems = {
   "Counter": <Counter />,
   "Real-time Search": <Search />,
-  'Todo List': undefined,
-  'Image Tiles': undefined,
+  'Todo List': <DefaultComponent />,
+  'Image Tiles': <DefaultComponent />,
 };
 
 export const libraries = [
