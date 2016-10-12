@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
-import { libraries } from '../static-content.js';
 import appStore from '../stores/AppStore';
 
+import { libraries } from '../static-content.js';
 import '../styles/Search.css';
 
 const Search = observer(class Search extends Component {
