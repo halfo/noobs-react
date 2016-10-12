@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import TabPane from './TabPane';
-import Showcase from './Showcase';
+import { showcaseItems } from '../static-content.js';
 import appStore from '../stores/AppStore';
 
 import '../styles/App.css';
 
 const App = observer(class App extends Component {
   render() {
-    const { items } = this.props;
-
+    const { itemNames } = this.props;
+    console.log(Object.keys(showcaseItems));
+    console.log(itemNames);
     return (
       <div className="App">
-        <TabPane items={items} />
-        <Showcase text={items[appStore.focusedIndex]}/>        
+        <TabPane itemNames={itemNames} />
+        {showcaseItems[itemNames[appStore.focusedIndex]]}                
       </div>
     );
   }

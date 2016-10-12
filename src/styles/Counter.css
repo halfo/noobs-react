@@ -1,0 +1,22 @@
+.Counter button {
+    display: inline-block;
+
+    margin: 10px 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+
+    background-color: #eee;
+    color: #7B8585;
+    
+    transition: 0.3s;
+}
+
+.Counter button:hover {
+    background-color: #beecea;
+}
+
+.Counter button.focused {
+    color: #fff;
+    background-color: #41c7c2;
+}

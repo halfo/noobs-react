@@ -7,7 +7,7 @@ class ListItem extends Component {
 
     return (
       <li className={style}
-          onClick={context.clicked.bind(context, id)}>
+          onClick={context.onClick.bind(context, id)}>
           {child}
       </li>
     );
