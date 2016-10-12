@@ -4,6 +4,6 @@ import App from './components/App';
 import './index.css';
 
 ReactDOM.render(
-  <App items={ ['Timer', 'Real-time Search', 'Todo List', 'Image Tiles'] } />,
+  <App items={ ['Counter', 'Real-time Search', 'Todo List', 'Image Tiles'] } />,
   document.getElementById('root')
 );

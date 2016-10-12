@@ -3,11 +3,11 @@ import '../styles/ListItem.css';
 
 class ListItem extends Component {
   render() {
-    const { id, child, style, boundNode } = this.props;
+    const { id, child, style, context } = this.props;
 
     return (
       <li className={style}
-          onClick={boundNode.clicked.bind(boundNode, id)}>
+          onClick={context.clicked.bind(context, id)}>
           {child}
       </li>
     );

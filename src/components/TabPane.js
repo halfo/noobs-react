@@ -8,7 +8,7 @@ import '../styles/TabPane.css';
 
 const TabPane = observer(class TabPane extends Component {
   clicked(index) {
-    appStore.setFocusedIndex(index)
+    appStore.focusedIndex = index
   }
 
   render() {
@@ -16,19 +16,19 @@ const TabPane = observer(class TabPane extends Component {
           items = this.props.items;
 
     return (
-        <ul className="TabPane">{
-          items.map((elem, index) => {
-            const style = appStore.getFocusedIndex() === 'focused'
-                        ? 'focused'
-                        : '';
+      <ul className="TabPane">{
+        items.map((elem, index) => {
+          const style = appStore.focusedIndex === 'focused'
+                      ? 'focused'
+                      : '';
 
-            return <Tab id={index}
-                        key={index}
-                        child={elem}
-                        style={style}
-                        boundNode={self} />
-          })
-        }</ul>    
+          return <Tab id={index}
+                      key={index}
+                      child={elem}
+                      style={style}
+                      context={self} />
+        })
+      }</ul>    
     );
   }
 })
