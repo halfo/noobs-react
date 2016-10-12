@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
+
 import Tab from './ListItem';
+import appStore from '../stores/AppStore';
+
 import '../styles/TabPane.css';
 
-class TabPane extends Component {
-  state = {
-    focused: 0,
-  }
-
+const TabPane = observer(class TabPane extends Component {
   clicked(index) {
-    this.setState({ focused: index })
+    appStore.setFocusedIndex(index)
   }
 
   render() {
-    let self  = this,
-        items = this.props.items;
+    const self  = this,
+          items = this.props.items;
 
     return (
         <ul className="TabPane">{
           items.map((elem, index) => {
-            let style = self.state.focused === 'focused'
-                      ? 'focused'
-                      : '';
+            const style = appStore.getFocusedIndex() === 'focused'
+                        ? 'focused'
+                        : '';
 
             return <Tab id={index}
                         key={index}
@@ -31,6 +31,6 @@ class TabPane extends Component {
         }</ul>    
     );
   }
-}
+})
 
 export default TabPane;

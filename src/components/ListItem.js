@@ -3,10 +3,7 @@ import '../styles/ListItem.css';
 
 class ListItem extends Component {
   render() {
-    let id         = this.props.id,
-        child      = this.props.child,
-        style      = this.props.style,
-        boundNode  = this.props.boundNode;
+    const { id, child, style, boundNode } = this.props;
 
     return (
       <li className={style}
