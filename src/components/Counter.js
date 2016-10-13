@@ -12,7 +12,7 @@ const Counter = observer(class Counter extends Component {
 
   render() {
     return (
-      <div className="Counter">        
+      <div className="Counter">
         <button onClick={this.handleInc}> + </button>
         <button onClick={this.handleDec}> - </button>
         <button onClick={this.handleReset}> Reset </button>

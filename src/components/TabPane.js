@@ -28,7 +28,7 @@ const TabPane = observer(class TabPane extends Component {
                       style={style}
                       context={self} />
         })
-      }</ul>    
+      }</ul>
     );
   }
 })

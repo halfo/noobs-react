@@ -14,7 +14,7 @@ const App = observer(class App extends Component {
     return (
       <div className="App">
         <TabPane itemNames={itemNames} />
-        {showcaseItems[itemNames[appStore.focusedIndex]]}                
+        {showcaseItems[itemNames[appStore.focusedIndex]]}
       </div>
     );
   }

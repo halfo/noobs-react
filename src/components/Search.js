@@ -7,7 +7,7 @@ import { libraries } from '../static-content.js';
 import '../styles/Search.css';
 
 const Search = observer(class Search extends Component {
-  handleChange(event) {    
+  handleChange(event) {
     appStore.setSearchString(event.target.value);
   }
 
