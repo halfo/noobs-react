@@ -7,12 +7,12 @@ import { libraries } from '../static-content.js';
 import '../styles/Search.css';
 
 const Search = observer(class Search extends Component {
-  handleChange(event) {
-    appStore.setSearchString(event.target.value);
+  onChange(event) {
+    appStore.searchString = event.target.value
   }
 
   render() {
-    const searchString = appStore.getSearchString()
+    const searchString = appStore.searchString
                                  .trim()
                                  .toLowerCase();
 
@@ -23,7 +23,7 @@ const Search = observer(class Search extends Component {
     return (
       <div className="Search">
         <input type="text"
-               onChange={this.handleChange}
+               onChange={this.onChange}
                placeholder="Type here" />
 
         <ul>{
