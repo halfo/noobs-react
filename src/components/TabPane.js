@@ -18,7 +18,7 @@ const TabPane = observer(class TabPane extends Component {
     return (
       <ul className="TabPane">{
         itemNames.map((elem, index) => {
-          const style = appStore.focusedIndex === 'focused'
+          const style = appStore.focusedIndex === index
                       ? 'focused'
                       : '';
 
