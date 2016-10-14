@@ -7,9 +7,7 @@ import appStore from '../stores/AppStore';
 import '../styles/TabPane.css';
 
 const TabPane = observer(class TabPane extends Component {
-  onClick(index) {
-    appStore.focusedIndex = index
-  }
+  onClick(index) { appStore.focusedIndex = index }
 
   render() {
     const self      = this,

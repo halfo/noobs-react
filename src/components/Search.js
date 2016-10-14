@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-
-import appStore from '../stores/AppStore';
+import { observable } from 'mobx';
 
 import { libraries } from '../static-content.js';
 import '../styles/Search.css';
 
 const Search = observer(class Search extends Component {
+  inputText = observable('');
+
   onChange(event) {
-    appStore.searchString = event.target.value
+    this.inputText.set(event.target.value);
   }
 
   render() {
-    const searchString = appStore.searchString
-                                 .trim()
-                                 .toLowerCase();
+    const queryString = this.inputText
+                            .get()
+                            .trim()
+                            .toLowerCase();
 
     const result = libraries.filter((elem) => elem.name
                                                   .toLowerCase()
-                                                  .match(searchString));
+                                                  .match(queryString));
 
     return (
       <div className="Search">
         <input type="text"
-               onChange={this.onChange}
+               onChange={this.onChange.bind(this)}
                placeholder="Type here" />
 
         <ul>{
